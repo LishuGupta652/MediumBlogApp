@@ -4,6 +4,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import PortableText from "react-portable-text"
 import {useForm, SubmitHandler} from "react-hook-form";
+import { useState } from "react";
 interface Props {
     post: Post;
 }
@@ -16,7 +17,7 @@ interface IFormInput {
 }
 
 const Post = ({post} : Props) => {
-
+    const [submitted ,setSubmitted] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm<IFormInput>();
 
 
@@ -27,9 +28,10 @@ const Post = ({post} : Props) => {
 
         }).then(() => {
             console.log(data);
-
+            setSubmitted(true);
         }).catch((err) => {
             console.log(err);
+            setSubmitted(false);
         })
     }
   return <main>
@@ -69,8 +71,18 @@ const Post = ({post} : Props) => {
 
 
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500 "/>
+                {
+                    submitted ? (
+                        <div className="flex flex-col py-10 my-10 px-10 bg-yellow-500 text-white max-w-2xl mx-auto ">
+                            <h3 className="text-3xl font-bold">Thank you for submitting your comment!</h3>
+                            <p>
+                                Once it has been approved, it will appear below!
+                            </p>
+                        </div>
+                    ):
+                    (
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col my-10 p-5 max-w-2xl mx-auto mb-10">
+                        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col my-10 p-5 max-w-2xl mx-auto mb-10">
 
           <h3 className="text-sm text-yellow-500">Enjoy this article</h3>
           <h4 className="text-3xl font-bold">Leave a comment below!</h4>
@@ -101,6 +113,8 @@ const Post = ({post} : Props) => {
 
           <input type="submit" className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline  focus:outline-none text-white font-bold py-2 rounded cursor-pointer" />
       </form>
+)
+}
   </main>
 };
 
