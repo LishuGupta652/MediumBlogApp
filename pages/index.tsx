@@ -11,6 +11,7 @@ export default function Home() {
 
       <Header />
 
+      {/* banner */}
       <div className='flex justify-between items-center bg-yellow-400 border-y border-black py-10 lg:py-0'>
         <div className='px-10 space-y-5 '>
           <h1 className='text-6xl font-serif'> <span className='underline decoration-black decoration-4'>Medium</span> is a place to write, read and connect</h1>
@@ -22,6 +23,9 @@ export default function Home() {
 
         <img className="hidden md:inline-flex h-32 lg:h-min " src="bannerlogo.png" alt="" />
       </div>
+
+      {/* posts */}
+      
     </div>
   )
 }

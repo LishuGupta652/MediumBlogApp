@@ -13,6 +13,7 @@ This is a blog post application
 > npx create-next-app --example with-tailwindcss medium-build
 > npm install -g sanity/cli
 > sanity init --coupon sonny2022
+> sanity start
 
 ```
 
