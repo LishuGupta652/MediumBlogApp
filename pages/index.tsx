@@ -46,7 +46,7 @@ export const getServerSideProps = async () => {
     author -> {
     name,
     image
-  }
+    }
   }`;
 
   const posts = await sanityClient.fetch(query);
