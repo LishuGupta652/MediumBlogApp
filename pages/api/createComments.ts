@@ -2,9 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import  sanityClient  from '@sanity/client'
 
-type Data = {
-  name: string
-}
  const config = {
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,

@@ -1,6 +1,6 @@
 export default {
   name: 'comment',
-  type: 'comment',
+  type: 'document',
   title: 'Comment',
   fields: [
     {
@@ -14,7 +14,6 @@ export default {
     },
     {
       name: 'email',
-      title: 'Email',
       type: 'string',
     },
     {
@@ -22,7 +21,7 @@ export default {
       type: 'text',
     },
     {
-      name: 'text',
+      name: 'post',
       type: 'reference',
       to: [{ type: 'post' }],
     },
