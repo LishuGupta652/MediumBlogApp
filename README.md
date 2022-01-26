@@ -2,7 +2,10 @@
 
 This is a blog post application
 
-## Prerequisites
+![Home](./homepage.jpg)
+![blog page](./blog.jpg)
+
+## TechStack
 
 - nextjs
 - reactjs
