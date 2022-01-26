@@ -79,12 +79,14 @@ const Post = ({post} : Props) => {
           
 
           {/* error will return when field validation fails */}
-          <div>
+          <div className="flex flex-col p-5">
               {errors.name && <span className="text-red-600">Name is required</span>}
               {errors.email && <span className="text-red-600">Email is required</span>}
               {errors.comment && <span className="text-red-600">Comment is required</span>}
               
           </div>
+
+          <input type="submit" className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline  focus:outline-none text-white font-bold py-2 rounded cursor-pointer" />
       </form>
   </main>
 };
