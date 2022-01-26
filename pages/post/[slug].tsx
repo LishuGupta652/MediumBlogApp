@@ -66,15 +66,15 @@ const Post = ({post} : Props) => {
           <input {...register("_id")} type="hidden" name="_id" value={post._id} />
           <label className="block mb-5 " htmlFor="">
               <span className="text-gray-700 ">Name</span>
-              <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500  focus:ring outline-none " type="text" placeholder="Lishu Gupta" />
+              <input {...register("name", {required: true})} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500  focus:ring outline-none " type="text" placeholder="Lishu Gupta" />
           </label>
           <label className="block mb-5 " htmlFor="">
               <span className="text-gray-700 ">Email</span>
-              <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring  " type="email" placeholder="test@mail.com" />
+              <input  {...register("email", {required: true})} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring  " type="email" placeholder="test@mail.com" />
           </label>
           <label className="block mb-5 " htmlFor="">
               <span className="text-gray-700 ">Comment</span>
-              <textarea className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none" placeholder="Comment" rows={8} />
+              <textarea  {...register("comment", {required: true})} className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none" placeholder="Comment" rows={8} />
           </label>
           
       </form>
