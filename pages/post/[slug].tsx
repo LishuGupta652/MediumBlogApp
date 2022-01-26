@@ -8,8 +8,17 @@ interface Props {
     post: Post;
 }
 
+interface IFormInput {
+    _id: string;
+    name: string;
+    email: string;
+    comment: string;
+}
+
 const Post = ({post} : Props) => {
-    console.log(post);
+
+    const {register, handleSubmit, formState: {errors}} = useForm<IFormInput>();
+
   return <main>
       <Header />
 
@@ -53,6 +62,8 @@ const Post = ({post} : Props) => {
           <h3 className="text-sm text-yellow-500">Enjoy this article</h3>
           <h4 className="text-3xl font-bold">Leave a comment below!</h4>
           <hr  className="py-3 mt-2"/>
+
+          <input {...register("_id")} type="hidden" name="_id" value={post._id} />
           <label className="block mb-5 " htmlFor="">
               <span className="text-gray-700 ">Name</span>
               <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500  focus:ring outline-none " type="text" placeholder="Lishu Gupta" />
