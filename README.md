@@ -39,6 +39,7 @@ git add . && git commit -m "terminal" && git push origin main
 
 - [Demo]
 - [repository]
+- [sanity-studio](https://gitman.sanity.studio/)
 
 ## author
 
