@@ -12,7 +12,8 @@
 /.next/
 /out/
 
-sanitymedium
+sanitymedium/node_modules
+
 
 # production
 /build
