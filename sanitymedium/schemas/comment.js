@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: 'name',
-      type: 'stirng',
+      type: 'string',
     },
     {
       name: 'approved',
