@@ -77,6 +77,14 @@ const Post = ({post} : Props) => {
               <textarea  {...register("comment", {required: true})} className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none" placeholder="Comment" rows={8} />
           </label>
           
+
+          {/* error will return when field validation fails */}
+          <div>
+              {errors.name && <span className="text-red-600">Name is required</span>}
+              {errors.email && <span className="text-red-600">Email is required</span>}
+              {errors.comment && <span className="text-red-600">Comment is required</span>}
+              
+          </div>
       </form>
   </main>
 };
