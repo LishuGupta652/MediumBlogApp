@@ -40,8 +40,8 @@ git add . && git commit -m "terminal" && git push origin main
 
 ---
 
-- [Demo]
-- [repository]
+- [Demo](https://medium-blog-app.vercel.app/)
+- [repository](https://github.com/LishuGupta652/MediumBlogApp)
 - [sanity-studio](https://gitman.sanity.studio/)
 
 ## author
