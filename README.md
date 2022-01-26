@@ -9,6 +9,13 @@ This is a blog post application
 - nodejs
 - sanity
 
+```
+> npx create-next-app --example with-tailwindcss medium-build
+> npm install -g sanity/cli
+> sanity init --coupon sonny2022
+
+```
+
 ## installation
 
 ```bash
