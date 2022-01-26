@@ -15,10 +15,27 @@ type Data = {
 
 const client = sanityClient(config);
 
-export default function createComment(
+export default async function createComment(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
     const {_id , name , email, comment} = JSON.parse(req.body);
-  res.status(200).json({ name: 'John Doe' })
+
+    try{
+        await client.create({
+            _type: "comment",
+            post: {
+                _type: "reference",
+                _ref: _id
+            },
+            name,
+            email,
+            comment
+        });
+    }catch(err) {
+        console.log(err);
+        res.status(500).json({ message: 'Could not submit comment ', err })
+    }
+    console.log("Comment Submitted");
+  res.status(200).json({ message: 'Comment Submitted' })
 }
