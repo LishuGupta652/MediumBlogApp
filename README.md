@@ -14,6 +14,7 @@ This is a blog post application
 > npm install -g sanity/cli
 > sanity init --coupon sonny2022
 > sanity start
+> sanity deploy
 
 ```
 
