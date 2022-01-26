@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import PortableText from "react-portable-text"
+import {useForm, SubmitHandler} from "react-hook-form";
 interface Props {
     post: Post;
 }
